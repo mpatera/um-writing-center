@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+</h:head>
+<h:body>
+    <div id="container" style="width: 1050px;">
+        <div id="header" style="width: 1050px;">
+            <ui:insert  name="header" />
+            <ui:include src="header.xhtml" />
+        </div>
+        <div id="left" style="width: 250px; height: 100%; float: left;">
+            <ui:insert name="left" />
+            <ui:include src="menu.xhtml" />
+        </div>
+        <div id="content" style="width: 800px;  float: left;">
+            <ui:insert name="content" />
+        </div>
+    </div>
+</h:body>
+</html>
