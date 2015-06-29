@@ -3,6 +3,7 @@ package edu.umt.db.entities;
 import edu.umt.db.BaseEntity;
 
 import javax.persistence.*;
+import java.text.DateFormat;
 import java.util.Set;
 
 /**
@@ -15,7 +16,8 @@ public class Tutor extends BaseEntity{
     private String lastName;
     private String firstName;
     private Set<Session> sessions;
-
+    @Transient
+    private String fullName;
 
 
     @Id
@@ -56,6 +58,12 @@ public class Tutor extends BaseEntity{
 
     public void setSessions(Set<Session> sessions) {
         this.sessions = sessions;
+    }
+
+
+    @Transient
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 
     @Override

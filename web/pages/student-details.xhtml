@@ -32,6 +32,26 @@
                         <p:spacer height="20" width="30" />
                         <h:outputText value="Student Session History" />
                     </f:facet>
+                    <p:dataTable id="studentSessions" value="#{studentBackingBean.studentToView.sessions}" var="record" rows="10" style="font-size: 90%">
+                        <p:column width="120">
+                            <f:facet name="header">
+                                <h:outputText value="Session Date" />
+                            </f:facet>
+                            <h:outputText value="#{record.sessionDateAsString}" />
+                        </p:column>
+                        <p:column width="100">
+                            <f:facet name="header">
+                                <h:outputText value="Tutor Name" />
+                            </f:facet>
+                            <h:outputText value="#{record.tutor.fullName}" />
+                        </p:column>
+                        <p:column width="100">
+                            <f:facet name="header">
+                                <h:outputText value="Topic Covered" />
+                            </f:facet>
+                            <h:outputText value="#{record.topic}" />
+                        </p:column>
+                    </p:dataTable>
                 </p:panel>
             </h:form>
         </p:panel>

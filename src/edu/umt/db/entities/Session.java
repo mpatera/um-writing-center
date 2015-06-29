@@ -4,6 +4,7 @@ import edu.umt.db.BaseEntity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.text.DateFormat;
 import java.util.Set;
 
 /**
@@ -80,6 +81,14 @@ public class Session extends BaseEntity{
         this.modified = modified;
     }
 
+    @Transient
+    public String getSessionDateAsString(){
+        DateFormat df = DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.SHORT);
+        return df.format(created);
+    }
+
+
+    /** Base Entity Methods **/
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
