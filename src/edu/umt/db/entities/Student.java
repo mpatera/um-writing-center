@@ -61,7 +61,7 @@ public class Student extends BaseEntity{
         this.phone = phone;
     }
 
-    @OneToMany(mappedBy="student", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy="student", fetch=FetchType.LAZY)
     public Set<Session> getSessions() {
         return sessions;
     }

@@ -16,9 +16,10 @@ public class Session extends BaseEntity{
     private int sessionId;
     private Tutor tutor;
     private Student student;
-    private String topic;
     private Timestamp created;
     private Timestamp modified;
+    private Source source;
+    private TopicsCovered topicsCovered;
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -41,7 +42,7 @@ public class Session extends BaseEntity{
         this.tutor = tutor;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "STUDENT_ID", nullable=false)
     public Student getStudent() {
         return student;
@@ -49,16 +50,6 @@ public class Session extends BaseEntity{
 
     public void setStudent(Student student) {
         this.student = student;
-    }
-
-    @Basic
-    @Column(name = "TOPIC", nullable = true, insertable = true, updatable = true, length = 400)
-    public String getTopic() {
-        return topic;
-    }
-
-    public void setTopic(String topic) {
-        this.topic = topic;
     }
 
     @Basic
@@ -87,29 +78,21 @@ public class Session extends BaseEntity{
         return df.format(created);
     }
 
-
-    /** Base Entity Methods **/
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Session session = (Session) o;
-
-        if (sessionId != session.sessionId) return false;
-        if (created != null ? !created.equals(session.created) : session.created != null) return false;
-        if (modified != null ? !modified.equals(session.modified) : session.modified != null) return false;
-        if (topic != null ? !topic.equals(session.topic) : session.topic != null) return false;
-
-        return true;
+    @OneToOne (fetch = FetchType.LAZY, mappedBy = "session", cascade = CascadeType.ALL)
+    public Source getSource() {
+        return source;
     }
 
-    @Override
-    public int hashCode() {
-        int result = sessionId;
-        result = 31 * result + (topic != null ? topic.hashCode() : 0);
-        result = 31 * result + (created != null ? created.hashCode() : 0);
-        result = 31 * result + (modified != null ? modified.hashCode() : 0);
-        return result;
+    public void setSource(Source source) {
+        this.source = source;
+    }
+
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "session", cascade = CascadeType.ALL)
+    public TopicsCovered getTopicsCovered(){
+        return topicsCovered;
+    }
+
+    public void setTopicsCovered(TopicsCovered topicsCovered){
+        this.topicsCovered = topicsCovered;
     }
 }

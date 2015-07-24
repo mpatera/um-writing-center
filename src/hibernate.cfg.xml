@@ -13,6 +13,8 @@
       <mapping class="edu.umt.db.entities.Session"/>
       <mapping class="edu.umt.db.entities.Student"/>
       <mapping class="edu.umt.db.entities.Tutor"/>
+      <mapping class="edu.umt.db.entities.Source"/>
+      <mapping class="edu.umt.db.entities.TopicsCovered"/>
       <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
