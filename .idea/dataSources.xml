@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1416404659">
+    <data-source source="LOCAL" name="MySQL - test@localhost" uuid="9f49dc8b-3860-4819-8450-7696c47dfef5">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/test</jdbc-url>
+      <user-name>root</user-name>
+      <schema-pattern>test.*</schema-pattern>
+      <default-schemas>test.*</default-schemas>
+      <driver-properties>
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+      </driver-properties>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml" uuid="68af57bc-d2e1-48ca-84e6-f893e146ced2">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/test</jdbc-url>
+      <user-name>root</user-name>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/../../Java-Resources/MySQL/mysql-connector-java-5.1.25/mysql-connector-java-5.1.25-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="mysql" uuid="b6ca0700-c2b3-4f9d-9f32-c8d722037972">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/test</jdbc-url>
+      <user-name>root</user-name>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/../../Java-Resources/MySQL/mysql-connector-java-5.1.25/mysql-connector-java-5.1.25-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="banner" read-only="true" uuid="3e40b5a4-84cf-45e4-a546-c2f9c2d4dfa9">
+      <driver-ref>oracle</driver-ref>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@umadmn.umt.edu:7895:ADMNRED</jdbc-url>
+      <user-name>PREREGUSR</user-name>
+      <user-password>dfdedfc5dfc7dfc1dfc4dfc5dfdddfd9</user-password>
+      <schema-pattern>*.PREREGUSR</schema-pattern>
+      <default-schemas>*.PREREGUSR</default-schemas>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/../../Java-Resources/OracleDrivers/ojdbc6.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+
