@@ -23,7 +23,8 @@ public class DatabaseManagerTest {
 
     @Test
     public void testGetRecord() throws Exception {
-        BaseEntity tutor = DatabaseManager.getRecord(new Tutor(), new Integer(1));
+        Tutor tutor = new Tutor();
+        DatabaseManager.getRecordT(tutor, new Integer(1));
         Assert.assertTrue(tutor instanceof Tutor);
     }
 

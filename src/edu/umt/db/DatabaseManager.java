@@ -21,6 +21,10 @@ public class DatabaseManager {
         return (BaseEntity) currentSession().load(entity.getClass(), s);
     }
 
+    public static <T extends BaseEntity> void getRecordT(T entity, Serializable s){
+        currentSession().load(entity, s);
+    }
+
     public static <T>List<T> getRecords(Class<T> entity){
         try{
             Query query = currentSession().createQuery("from " + entity.getName());

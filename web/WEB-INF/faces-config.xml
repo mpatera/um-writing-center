@@ -21,6 +21,12 @@
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
 
+    <managed-bean>
+        <managed-bean-name>sourcesBackingBean</managed-bean-name>
+        <managed-bean-class>edu.umt.jsf.beans.SourcesBackingBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
 
     <!-- NAVIGATION RULES -->
     <navigation-rule>

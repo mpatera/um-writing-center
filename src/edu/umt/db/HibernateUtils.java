@@ -18,21 +18,29 @@ public final class HibernateUtils {
 
     private HibernateUtils(){}
 
-    private static SessionFactory createSessionFactory(){
+    private static SessionFactory createSessionFactory(String database){
         try{
-            final Configuration configuration = new Configuration();
-            configuration.configure();
-            serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
-            sessionFactory =  configuration.buildSessionFactory(serviceRegistry);
-            return sessionFactory;
+            if(database.equals("writingcenter")) {
+                final Configuration configuration = new Configuration();
+                configuration.configure();
+                serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
+                sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+                return sessionFactory;
+            } else if(database.equals("banner")){
+                final Configuration configuration = new Configuration();
+                configuration.configure();
+                serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
+                sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+                return sessionFactory;
+            }
         } catch (Exception ex){
             log.error("Initial SessionsFactory creation failed: " + ex);
             throw new ExceptionInInitializerError(ex);
         }
     }
 
-    public static SessionFactory getSessionFactory() {
-        return createSessionFactory();
+    public static SessionFactory getSessionFactory(String database) {
+        return createSessionFactory(database);
     }
 
     public static void shutdown() {
